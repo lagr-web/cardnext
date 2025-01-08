@@ -32,10 +32,11 @@
   display: grid;
   justify-content: center;
   img {
-    width: 100%;
+    
     height: auto;
     -o-object-fit: cover;
     object-fit: cover;
+    
   }
 }
 #content {

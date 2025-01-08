@@ -1,14 +1,14 @@
-export interface Enemy {
+interface Enemy {
 
     name:string;
     img:string;
     text:string
 }
 
-export type EnemyArray = Enemy[];
+ type EnemyArray = Enemy[];
 
 
-export interface Data {
+interface Data {
     name: string;
     img: string;
     information: {
@@ -19,6 +19,6 @@ export interface Data {
     text: string;
 }
 
-export interface DataList {
+interface DataList {
     content: Data[];
 }

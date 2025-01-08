@@ -1,6 +1,5 @@
 import cardstyle from "./page.module.scss";
 
-
 export default function Home() {
 
   return (

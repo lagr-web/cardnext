@@ -5,30 +5,12 @@ import card from "../page.module.scss";
 import Image from "next/image";
 import gsap from "gsap";
 import { useSearchParams } from "next/navigation";
-import { EnemyArray } from "@/types/type";
+
+import UseFetch from "@/hooks/UseFetch";
 
 const Page = () => {
 
-    const data: EnemyArray = [
-        {
-        name:"Alien Scum",
-        img:"/assets/black-alien-scum.png",
-        text:"Ninja Killer dont touch him"
-        },
-       
-        {
-        name:"Death Smokie",
-        img:"/assets/death-smokie.png",
-        text:"Ninja Killer dont touch him"
-        },
-       
-        {
-        name:"Ping Pang",
-        img:"/assets/angry-ping.png",
-        text:"Just som penguin Shit"
-        }
-       
-        ] 
+    const [data] = UseFetch("https://enemy.pages.dev/assets/data.json");
 
     const searchParams = useSearchParams();
 
@@ -72,14 +54,14 @@ const Page = () => {
     return (
 
         <main>
-
+{data &&
             <section ref = {refObj} id={card.cardContainer}>
                 <div id={card.card}>
-                    <div id={card.headline}>{data[id].name}</div>
+                    <div id={card.headline}>{data?.content[id].name}</div>
                     <div id={card.imagecon}>
 
                       <Image
-                       src={data[id].img}
+                       src={`/assets/${data.content[id].img}`} 
                        alt = "Picture"
                        width={250}
                        height = {250}
@@ -87,11 +69,11 @@ const Page = () => {
 
 
                     </div>
-                    <div id={card.content}>{data[id].text}</div>
+                    <div id={card.content}>{data.content[id].text}</div>
 
                 </div>
             </section>
-
+}
         </main>
 
     )
