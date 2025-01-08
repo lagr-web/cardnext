@@ -34,7 +34,7 @@ const Page = () => {
 
     const queryString = searchParams.get('id');
 
-    //const dataID = query as string;
+   // const dataID = query as string;
 
    // const id = parseInt(dataID);
 
